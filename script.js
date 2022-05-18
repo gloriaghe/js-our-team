@@ -33,3 +33,33 @@ const membriTeam =
         'foto': 'img/barbara-ramos-graphic-designer.jpg'
     }     
 ];
+
+//ciclo per creare card membri in Html
+const stampa = document.querySelector(".team-container");
+
+for (let i= 0; i<membriTeam.length; i++) {
+
+    const creatoDivTeam = document.createElement("div");
+    creatoDivTeam.classList.add("team-card");
+    const creatoDivImg = document.createElement("div");
+    creatoDivImg.classList.add("card-image");
+    creatoDivTeam.append(creatoDivImg);
+    const creatoImg = document.createElement("img");
+    creatoImg.src= membriTeam[i].foto;
+    creatoImg.alt= membriTeam[i].nome;
+    creatoDivImg.append(creatoImg);
+    const creatoDivText = document.createElement("div");
+    creatoDivText.classList.add("card-text");
+    creatoDivTeam.append(creatoDivText);
+    const creatoh3 = document.createElement("h3");
+    creatoh3.append(membriTeam[i].nome);
+    creatoDivText.append(creatoh3);
+    const creatop = document.createElement("p");
+    creatop.append(membriTeam[i].ruolo);
+    creatoDivText.append(creatop);
+
+
+
+    
+    stampa.append(creatoDivTeam);
+}
