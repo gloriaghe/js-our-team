@@ -37,6 +37,7 @@ const membriTeam =
 //ciclo per creare card membri in Html
 const stampa = document.querySelector(".team-container");
 
+
 for (let i= 0; i<membriTeam.length; i++) {
 
     const creatoDivTeam = document.createElement("div");
@@ -63,3 +64,40 @@ for (let i= 0; i<membriTeam.length; i++) {
     
     stampa.append(creatoDivTeam);
 }
+
+// bonus
+
+const AddButton = document.querySelector("button");
+const nameNewMember = document.querySelector("#name");
+let newName = nameNewMember.value;
+
+const roleNewMember = document.querySelector("#role");
+let newRole = roleNewMember.value;
+
+const imageNewMember= document.querySelector("#image");
+let newImg = imageNewMember.value;
+
+
+
+AddButton.addEventListener("click",
+function() {
+        
+        let nuovoMembro = {
+        
+            "nome" : newName,
+            "ruolo" : newRole,
+            "foto" : newImg
+        
+        
+        };
+
+        membriTeam.push(nuovoMembro);
+
+
+        console.log([membriTeam])
+
+
+    }
+)
+
+console.log([membriTeam])
