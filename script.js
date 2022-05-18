@@ -34,11 +34,10 @@ const membriTeam =
     }     
 ];
 
-//ciclo per creare card membri in Html
-const stampa = document.querySelector(".team-container");
+//funzione per inserire i membri
 
-
-for (let i= 0; i<membriTeam.length; i++) {
+function inserisciMembro(oggetto) {
+    const stampa = document.querySelector(".team-container");
 
     const creatoDivTeam = document.createElement("div");
     creatoDivTeam.classList.add("team-card");
@@ -46,23 +45,28 @@ for (let i= 0; i<membriTeam.length; i++) {
     creatoDivImg.classList.add("card-image");
     creatoDivTeam.append(creatoDivImg);
     const creatoImg = document.createElement("img");
-    creatoImg.src= membriTeam[i].foto;
-    creatoImg.alt= membriTeam[i].nome;
+    creatoImg.src= oggetto.foto;
+    creatoImg.alt= oggetto.nome;
     creatoDivImg.append(creatoImg);
     const creatoDivText = document.createElement("div");
     creatoDivText.classList.add("card-text");
     creatoDivTeam.append(creatoDivText);
     const creatoh3 = document.createElement("h3");
-    creatoh3.append(membriTeam[i].nome);
+    creatoh3.append(oggetto.nome);
     creatoDivText.append(creatoh3);
     const creatop = document.createElement("p");
-    creatop.append(membriTeam[i].ruolo);
+    creatop.append(oggetto.ruolo);
     creatoDivText.append(creatop);
-
-
-
-    
     stampa.append(creatoDivTeam);
+
+}
+
+//ciclo per creare card membri in Html
+
+for (let i= 0; i<membriTeam.length; i++) {
+    
+    inserisciMembro(membriTeam[i]);
+
 }
 
 // bonus
@@ -90,30 +94,14 @@ function() {
         };
 
         membriTeam.push(nuovoMembro);
-        console.log([membriTeam])
+        console.log([membriTeam]);
 
+        inserisciMembro(nuovoMembro);
 
-        const creatoDivTeamNew = document.createElement("div");
-        creatoDivTeamNew.classList.add("team-card");
-        const creatoDivImgNew = document.createElement("div");
-        creatoDivImgNew.classList.add("card-image");
-        creatoDivTeamNew.append(creatoDivImgNew);
-        const creatoImgNew = document.createElement("img");
-        creatoImgNew.src= nuovoMembro.foto;
-        creatoImgNew.alt= nuovoMembro.nome;
-        creatoDivImgNew.append(creatoImgNew);
-        const creatoDivTextNew = document.createElement("div");
-        creatoDivTextNew.classList.add("card-text");
-        creatoDivTeamNew.append(creatoDivTextNew);
-        const creatoh3New = document.createElement("h3");
-        creatoh3New.append(nuovoMembro.nome);
-        creatoDivTextNew.append(creatoh3New);
-        const creatopNew = document.createElement("p");
-        creatopNew.append(nuovoMembro.ruolo);
-        creatoDivTextNew.append(creatopNew);
-        stampa.append(creatoDivTeamNew);
 
     }
 )
 
 console.log([membriTeam])
+
+
