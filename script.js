@@ -68,6 +68,7 @@ for (let i= 0; i<membriTeam.length; i++) {
 // bonus
 
 const AddButton = document.querySelector("button");
+
 const nameNewMember = document.querySelector("#name");
 let newName = nameNewMember.value;
 
@@ -83,19 +84,34 @@ AddButton.addEventListener("click",
 function() {
         
         let nuovoMembro = {
-        
             "nome" : newName,
             "ruolo" : newRole,
             "foto" : newImg
-        
-        
         };
 
         membriTeam.push(nuovoMembro);
-
-
         console.log([membriTeam])
 
+
+        const creatoDivTeamNew = document.createElement("div");
+        creatoDivTeamNew.classList.add("team-card");
+        const creatoDivImgNew = document.createElement("div");
+        creatoDivImgNew.classList.add("card-image");
+        creatoDivTeamNew.append(creatoDivImgNew);
+        const creatoImgNew = document.createElement("img");
+        creatoImgNew.src= nuovoMembro.foto;
+        creatoImgNew.alt= nuovoMembro.nome;
+        creatoDivImgNew.append(creatoImgNew);
+        const creatoDivTextNew = document.createElement("div");
+        creatoDivTextNew.classList.add("card-text");
+        creatoDivTeamNew.append(creatoDivTextNew);
+        const creatoh3New = document.createElement("h3");
+        creatoh3New.append(nuovoMembro.nome);
+        creatoDivTextNew.append(creatoh3New);
+        const creatopNew = document.createElement("p");
+        creatopNew.append(nuovoMembro.ruolo);
+        creatoDivTextNew.append(creatopNew);
+        stampa.append(creatoDivTeamNew);
 
     }
 )
