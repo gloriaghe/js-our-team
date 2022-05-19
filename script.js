@@ -74,10 +74,6 @@ for (let i= 0; i<membriTeam.length; i++) {
 
 const AddButton = document.querySelector("button");
 
-
-
-
-
 AddButton.addEventListener("click",
 function() {
     const nameNewMember = document.querySelector("#name");
@@ -89,20 +85,18 @@ function() {
     const imageNewMember= document.querySelector("#image");
     let newImg = imageNewMember.value;
 
-    
-        let nuovoMembro = {
-            "nome" : newName,
-            "ruolo" : newRole,
-            "foto" : newImg
-        };
 
-        membriTeam.push(nuovoMembro);
-        console.log([membriTeam]);
-        console.log([nuovoMembro]);
+    let nuovoMembro = {
+        "nome" : newName,
+        "ruolo" : newRole,
+        "foto" : newImg
+    };
 
-        inserisciMembro(nuovoMembro);
+    membriTeam.push(nuovoMembro);
+    console.log([membriTeam]);
+    console.log([nuovoMembro]);
 
-
+    inserisciMembro(nuovoMembro);
     }
 )
 
