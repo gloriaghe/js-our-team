@@ -45,7 +45,8 @@ function inserisciMembro(oggetto) {
     creatoDivImg.classList.add("card-image");
     creatoDivTeam.append(creatoDivImg);
     const creatoImg = document.createElement("img");
-    creatoImg.src= oggetto.foto;
+    // creatoImg.src= oggetto.foto;
+    creatoImg.setAttribute("src", oggetto.foto)
     creatoImg.alt= oggetto.nome;
     creatoDivImg.append(creatoImg);
     const creatoDivText = document.createElement("div");
